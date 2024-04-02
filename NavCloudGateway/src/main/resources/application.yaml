@@ -48,8 +48,8 @@ spring:
                 fallbackuri: forward:/departmentServiceFallBack
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 1
-                redis-rate-limiter.burstCapacity: 1
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 10
           
           
         - id: NAV-EMPLOYEE-SERVICE
@@ -63,17 +63,7 @@ spring:
                 fallbackuri: forward:/employeeServiceFallBack
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 1
-                redis-rate-limiter.burstCapacity: 1
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 10
 
 
-  security:
-    oauth2:
-      client:
-        registration:
-         google:
-          clientId: 1066712321564-f6n95oo8bc7k54puk3tcj4o5hfe4nkbh.apps.googleusercontent.com
-          clientSecret: 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
-          scope:
-           - email
-           - profile
